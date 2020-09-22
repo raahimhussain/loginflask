@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block body %}
+    <title>Home</title>
+  </head>
+  <body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-nav">
+		<a class="navbar-brand text-light" href="home">Plant Disease Detection</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+	  
+		<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+		  <ul class="navbar-nav">
+			<li class="nav-item active">
+			  <a class="nav-link text-white" href="home"><b>Home</b> <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link text-light" href="profile">Profile</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-light" href="contactus">Contact Us</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-light" href="testplant">Test Plant</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-light" href="logout">Log Out</a>
+			</li>
+
+			
+		  </ul>
+		</div>
+	  </nav>
+	  	<div style="width:1000px; margin:0 auto; margin-top:50px; ">
+			<h3 class="text-dark"style="text-align:center;">Welcome! {{params['Name']}}</h3><br><br>
+			
+		</div>
+	
+{% endblock%}

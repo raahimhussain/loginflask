@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block body %}
+<title>Sign Up</title>
+</head>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    {% for msg in messages %}
+    {% if msg == "Registration Failed (Password did not Matched)"%}
+    <div class="alert alert-danger" role="alert">
+      {{msg}}
+      
+    </div>
+    {% endif %}
+    {% if msg == "Registration Failed (Use Atleast Six Lenght String)"%}
+    <div class="alert alert-danger" role="alert">
+      {{msg}}
+      
+    </div>
+    {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <body class="bg-nav">
+  <nav class="navbar">
+      <a href="" class="navbar-brand text-light">Plant Disease Detection</a>
+  </nav>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-8">
+        <h1 class="text-light display-4 mt-100" style="font-size:70px">Check Health of Your Plants by Identifying the Correct Disease</h1>
+      </div>
+
+        <div class="col-md-4">
+          <div class="card mt-100">
+            <div class="card-body">
+              <form class="form" action="/signup" method="post">
+                  <div class="form-label-group">
+                    <input type="text" id="inputName" class="form-control" placeholder="Name" name="Name" min="5" max="15" required autofocus>
+                    
+                  </div><br>
+
+                  <div class="form-label-group">
+                    <input type="tel" id="inputPhone" class="form-control" placeholder="Phone Number" name="Phone" min="11" max="13" required autofocus>
+                    
+                  </div><br>
+
+                  <div class="form-label-group">
+                    <input type="text" id="inputAddress" class="form-control" placeholder="Address" name="Address" min="10" max="25" required autofocus>
+                    
+                  </div><br>
+
+                  <div class="form-label-group">
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="Email" required autofocus>
+                    
+                  </div><br>
+
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password"min="7" max="25" name="Password" required>
+                    
+                  </div><br>
+                  <div class="form-label-group">
+                    <input type="password" id="ConfirmPassword" class="form-control" placeholder="Confirm Password" min="7" max="25" name="Confirm" required>
+                    
+                  </div><br>
+                  
+                  
+
+                  
+
+
+                <input type="submit" class="btn btn-primary btn-block btn-lg" value="Register">
+
+                
+              </form><br>
+              <p>Already a Member? <a href="login">Login</a></p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+
+{% endblock%}

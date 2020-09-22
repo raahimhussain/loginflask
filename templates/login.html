@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block body %}
+<title>Login</title>
+</head>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    {% for msg in messages %}
+    {% if msg == "Successfully! Registered"%}
+    <div class="alert alert-success" role="alert">
+      {{msg}}
+      
+    </div>
+    {% endif %}
+    {% if msg == "Invalid Email or Password"%}
+    <div class="alert alert-danger" role="alert">
+      {{msg}}
+      
+    </div>
+    {% endif %}
+    {% if msg == "Request Submitted! Check mail to Reset your Password"%}
+    <div class="alert alert-success" role="alert">
+      {{msg}}
+      
+    </div>
+    {% endif %}
+    
+    {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <body class="bg-nav">
+  <nav class="navbar">
+      <a href="" class="navbar-brand text-light">Plant Disease Detection</a>
+  </nav>
+  
+  <div class="container">
+    
+    <div class="row">
+
+      <div class="col-md-8">
+      
+        <h1 class="text-light display-4 mt-100" style="font-size:70px">Check Health of Your Plants by Identifying the Correct Disease</h1>
+      </div>
+        <div class="col-md-4">
+          <div class="card mt-100">
+            <div class="card-body">
+              
+              <form class="form" action="/login" method="post">
+                  <div class="form-label-group">
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="Email"required autofocus>
+                    
+                  </div><br>
+
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="Password" required>
+                    
+                  </div><br>
+                  <div class="form-label-group">
+                    <a class="text-danger" href="forgotpassword">Forgot Password?</a>
+                    
+                  </div><br>
+
+                <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+
+                
+              </form><br>
+              <p>Not a Member? <a href="signup">Create Account</a></p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+{% endblock%}
